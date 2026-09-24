@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Happy Birthday Vaishnavi ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio id="birthdaySong" preload="auto" loop>
+      <source src="tumhe_jo_maine_dekha.m4a" type="audio/mp4">
+    </audio>
+    <button id="musicToggle" class="music-toggle" onclick="toggleMusic()" aria-label="Pause music"><span>♫</span><small>music</small></button>
+    <main id="app">
+    <div class="progress"><span id="progressBar"></span></div>
+
+    <!-- 1. Welcome -->
+    <section class="screen active" data-step="0">
+      <div class="opening-scene">
+        <div class="opening-glow"></div>
+        <div class="opening-photo-wrap">
+          <img class="opening-photo" src="photos/vaishnavi_1.png" alt="Vaishnavi">
+          <div class="photo-shine"></div>
+          <div class="floating-heart h1">♥</div>
+          <div class="floating-heart h2">♥</div>
+          <div class="floating-heart h3">♥</div>
+        </div>
+        <div class="opening-copy">
+          <div class="tiny-label">A little surprise made just for you</div>
+          <h1>For <span>Vaishnavi</span> ❤️</h1>
+          <p class="opening-subtitle">A tiny journey through memories,<br>smiles and a little piece of my heart.</p>
+          <button class="begin-button" onclick="beginStory()">
+            <span>Tap to begin our story</span>
+            <b>→</b>
+          </button>
+          <div id="teaseText" class="tease"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Balloons -->
+    <section class="screen" data-step="1">
+      <div class="section-head">
+        <div class="tiny-label">Little challenge</div>
+        <h2>Pop all 4 balloons 🎈</h2>
+        <p>Tap each balloon to unlock the next surprise.</p>
+      </div>
+      <div class="balloon-area">
+        <button class="balloon b1" onclick="popBalloon(this)">🎈</button>
+        <button class="balloon b2" onclick="popBalloon(this)">🎈</button>
+        <button class="balloon b3" onclick="popBalloon(this)">🎈</button>
+        <button class="balloon b4" onclick="popBalloon(this)">🎈</button>
+      </div>
+      <div class="counter"><span id="balloonCount">0</span> / 4 popped</div>
+      <button id="balloonNext" class="pill primary hidden" onclick="nextStep()">Continue 💕</button>
+    </section>
+
+    <!-- 3. Cake -->
+    <section class="screen" data-step="2">
+      <div class="section-head">
+        <div class="tiny-label">Make a wish</div>
+        <h2>One candle. One wish. 🎂</h2>
+        <p>Tap the flame to blow it out.</p>
+      </div>
+      <div class="cake-wrap">
+        <div id="flame" class="flame" onclick="blowCandle()">🔥</div>
+        <div class="cake-top">♡</div>
+        <div class="cake">🎂</div>
+        <div class="plate"></div>
+      </div>
+      <p id="wishMessage" class="success-text"></p>
+      <button id="cakeNext" class="pill primary hidden" onclick="nextStep()">I made my wish ✨</button>
+    </section>
+
+    <!-- 4. Memories -->
+    <section class="screen" data-step="3">
+      <div class="section-head">
+        <div class="tiny-label">Our memories</div>
+        <h2>Some Sweet Moments 📸</h2>
+        <p>Every picture has a little piece of a memory I want to keep. ❤️</p>
+      </div>
+      <div class="polaroid-grid photo-gallery">
+        <figure class="polaroid rotate-left"><img class="real-photo" src="photos/vaishnavi_1.png" alt="Vaishnavi"><figcaption>That beautiful smile ❤️</figcaption></figure>
+        <figure class="polaroid rotate-right"><img class="real-photo" src="photos/vaishnavi_2.png" alt="Vaishnavi"><figcaption>Simply you ✨</figcaption></figure>
+        <figure class="polaroid rotate-left2"><img class="real-photo" src="photos/vaishnavi_3.png" alt="Vaishnavi"><figcaption>One of my favorites</figcaption></figure>
+        <figure class="polaroid rotate-right2"><img class="real-photo" src="photos/vaishnavi_4.jpg" alt="Vaishnavi"><figcaption>A memory to keep</figcaption></figure>
+        <figure class="polaroid rotate-right"><img class="real-photo" src="photos/vaishnavi_5.png" alt="Vaishnavi"><figcaption>Your little moments ☕</figcaption></figure>
+        <figure class="polaroid rotate-left"><img class="real-photo" src="photos/vaishnavi_6.png" alt="Vaishnavi"><figcaption>Your playful side 💕</figcaption></figure>
+        <figure class="polaroid rotate-left2"><img class="real-photo" src="photos/vaishnavi_7.png" alt="Vaishnavi"><figcaption>Elegance ❤️</figcaption></figure>
+        <figure class="polaroid rotate-right2"><img class="real-photo" src="photos/vaishnavi_8.png" alt="Vaishnavi"><figcaption>Always special</figcaption></figure>
+      </div>
+      <button class="pill primary" onclick="nextStep()">There's a letter for you 💌</button>
+    </section>
+
+    <!-- 5. Envelope -->
+    <section class="screen" data-step="4">
+      <div class="section-head">
+        <div class="tiny-label">From my heart</div>
+        <h2>A Message For You 💌</h2>
+        <p>Tap the envelope and open your letter.</p>
+      </div>
+      <button class="envelope-button" onclick="openEnvelope()">
+        <div class="envelope">
+          <div class="flap"></div>
+          <div class="letter-mini">♥</div>
+          <div class="seal">♥</div>
+        </div>
+      </button>
+      <p id="envelopeHint">Tap to open</p>
+      <button id="letterNext" class="pill primary hidden" onclick="nextStep()">Read my message ❤️</button>
+    </section>
+
+    <!-- 6. Letter -->
+    <section class="screen" data-step="5">
+      <div class="letter-card cinematic-letter">
+        <div class="tiny-label">A letter from my heart</div>
+        <h2>Dear Vaishnavi,</h2>
+        <div id="typedLetter" class="typed-letter"></div>
+        <p class="signature">Happy Birthday, my favorite person. ❤️<br><strong>— Always yours</strong></p>
+      </div>
+      <button id="letterNext" class="pill primary" onclick="nextStep()">One last surprise 🎁</button>
+    </section>
+
+    <!-- 7. Gift -->
+    <section class="screen" data-step="6">
+      <div class="section-head">
+        <div class="tiny-label">The final surprise</div>
+        <h2>There's one more thing… 🎁</h2>
+        <p>Tap the gift.</p>
+      </div>
+      <button class="gift-button" onclick="openGift()">
+        <div class="gift">
+          <div class="gift-lid"></div>
+          <div class="gift-box"></div>
+          <div class="ribbon-v"></div>
+          <div class="ribbon-h"></div>
+          <div class="bow">🎀</div>
+        </div>
+      </button>
+      <p id="giftHint">Open me ✨</p>
+    </section>
+
+    <!-- 8. Finale -->
+    <section class="screen" data-step="7">
+      <div id="confetti"></div>
+      <div class="final-card">
+        <div class="big-heart pulse">♥</div>
+        <div class="tiny-label">And finally…</div>
+        <h1>Happy Birthday,<br><span>Vaishnavi</span> ❤️</h1>
+        <p class="final-message">
+          May this new year of your life bring you beautiful moments,
+          genuine smiles, big dreams, and everything your heart deserves.
+        </p>
+        <div class="final-line">And if I could give you one gift every day, it would be a reason to smile. ✨</div><div class="final-signoff">With love, always ❤️</div>
+        <button class="pill ghost" onclick="restart()">Replay the surprise ↻</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
