@@ -90,14 +90,19 @@ function popBalloon(el){
     "I don’t just want memories with you… I want a lifetime of them. 🥹❤️",
     "Happy Birthday, Vaishnavi… my wife. ❤️💍<br>Today is your birthday, but having you is my everyday gift. ✨"
   ];
-}
+
   message.innerHTML = messages[popped - 1];
-  message.classList.add('show');
+
+  /* Force the message to appear */
+  message.style.display = "block";
+  message.style.opacity = "1";
+  message.style.visibility = "visible";
+  message.style.transform = "none";
 
   if(popped === 4){
     document.getElementById('balloonNext').classList.remove('hidden');
   }
-
+}
 function blowCandle(){
   const flame=document.getElementById('flame');
   if(flame.classList.contains('out')) return;
