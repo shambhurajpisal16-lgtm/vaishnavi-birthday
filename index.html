@@ -22,7 +22,7 @@
       <div class="opening-scene">
         <div class="opening-glow"></div>
         <div class="opening-photo-wrap">
-          <img class="opening-photo" src="vaishnavi_1.png" alt="Vaishnavi">
+          <img class="opening-photo" src="vaishnavi_1.png" alt="Vaishnavi">onclick="openPhotoViewer(this.src)">
           <div class="photo-shine"></div>
           <div class="floating-heart h1">♥</div>
           <div class="floating-heart h2">♥</div>
@@ -83,14 +83,14 @@
         <p>Every picture has a little piece of a memory I want to keep. ❤️</p>
       </div>
       <div class="polaroid-grid photo-gallery">
-        <figure class="polaroid rotate-left"><img class="real-photo" src="vaishnavi_1.png" alt="Vaishnavi"><figcaption>That beautiful smile ❤️</figcaption></figure>
-        <figure class="polaroid rotate-right"><img class="real-photo" src="vaishnavi_2.png" alt="Vaishnavi"><figcaption>Simply you ✨</figcaption></figure>
-        <figure class="polaroid rotate-left2"><img class="real-photo" src="vaishnavi_3.png" alt="Vaishnavi"><figcaption>One of my favorites</figcaption></figure>
-        <figure class="polaroid rotate-right2"><img class="real-photo" src="vaishnavi_4.jpg" alt="Vaishnavi"><figcaption>A memory to keep</figcaption></figure>
-        <figure class="polaroid rotate-right"><img class="real-photo" src="vaishnavi_5.png" alt="Vaishnavi"><figcaption>Your little moments ☕</figcaption></figure>
-        <figure class="polaroid rotate-left"><img class="real-photo" src="vaishnavi_6.png" alt="Vaishnavi"><figcaption>Your playful side 💕</figcaption></figure>
-        <figure class="polaroid rotate-left2"><img class="real-photo" src="vaishnavi_7.png" alt="Vaishnavi"><figcaption>Elegance ❤️</figcaption></figure>
-        <figure class="polaroid rotate-right2"><img class="real-photo" src="vaishnavi_8.png" alt="Vaishnavi"><figcaption>Always special</figcaption></figure>
+        <figure class="polaroid rotate-left"><img class="real-photo" src="vaishnavi_1.png" alt="Vaishnavi"onclick="openPhotoViewer(this.src)"><figcaption>That beautiful smile ❤️</figcaption></figure>
+        <figure class="polaroid rotate-right"><img class="real-photo" src="vaishnavi_2.png" alt="Vaishnavi"onclick="openPhotoViewer(this.src)"><figcaption>Simply you ✨</figcaption></figure>
+        <figure class="polaroid rotate-left2"><img class="real-photo" src="vaishnavi_3.png" alt="Vaishnavi"onclick="openPhotoViewer(this.src)"><figcaption>One of my favorites</figcaption></figure>
+        <figure class="polaroid rotate-right2"><img class="real-photo" src="vaishnavi_4.jpg" alt="Vaishnavi"onclick="openPhotoViewer(this.src)"><figcaption>A memory to keep</figcaption></figure>
+        <figure class="polaroid rotate-right"><img class="real-photo" src="vaishnavi_5.png" alt="Vaishnavi"onclick="openPhotoViewer(this.src)"><figcaption>Your little moments ☕</figcaption></figure>
+        <figure class="polaroid rotate-left"><img class="real-photo" src="vaishnavi_6.png" alt="Vaishnavi"onclick="openPhotoViewer(this.src)"><figcaption>Your playful side 💕</figcaption></figure>
+        <figure class="polaroid rotate-left2"><img class="real-photo" src="vaishnavi_7.png" alt="Vaishnavi"onclick="openPhotoViewer(this.src)"><figcaptiononclick="openPhotoViewer(this.src)">Elegance ❤️</figcaption></figure>
+        <figure class="polaroid rotate-right2"><img class="real-photo" src="vaishnavi_8.png" alt="Vaishnavi"onclick="openPhotoViewer(this.src)"><figcaption>Always special</figcaption></figure>
       </div>
       <button class="pill primary" onclick="nextStep()">There's a letter for you 💌</button>
     </section>
@@ -159,7 +159,11 @@
       </div>
     </section>
   </main>
-
+<!-- Fullscreen Photo Viewer -->
+<div id="photoViewer" class="photo-viewer" onclick="closePhotoViewer()">
+  <button class="photo-close" onclick="closePhotoViewer(event)">✕</button>
+  <img id="fullPhoto" src="" alt="Vaishnavi">
+</div>
   <script src="script.js"></script>
 </body>
 </html>
