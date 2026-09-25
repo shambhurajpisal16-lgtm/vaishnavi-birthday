@@ -91,7 +91,7 @@ function popBalloon(el){
     "I don’t just want memories with you… I want a lifetime of them. 🥹❤️",
     "Happy Birthday, Vaishnavi… my wife. ❤️💍<br>Today is your birthday, but having you is my everyday gift. ✨"
   ];
-
+}
   message.innerHTML = messages[popped - 1];
   message.classList.add('show');
 
