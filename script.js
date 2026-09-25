@@ -128,3 +128,19 @@ function restart(){
   showStep(0);
 }
 showStep(0);
+function openPhotoViewer(src) {
+  const viewer = document.getElementById("photoViewer");
+  const photo = document.getElementById("fullPhoto");
+
+  photo.src = src;
+  viewer.classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+
+function closePhotoViewer(event) {
+  if (event) event.stopPropagation();
+
+  const viewer = document.getElementById("photoViewer");
+  viewer.classList.remove("show");
+  document.body.style.overflow = "";
+}
