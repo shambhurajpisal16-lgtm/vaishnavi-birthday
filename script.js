@@ -76,11 +76,29 @@ function tease(){
 }
 function popBalloon(el){
   if(el.classList.contains('pop')) return;
+
   el.classList.add('pop');
   popped++;
-  document.getElementById('balloonCount').textContent=popped;
-  if(popped===4) document.getElementById('balloonNext').classList.remove('hidden');
-}
+
+  document.getElementById('balloonCount').textContent =
+    popped + ' / 4 popped';
+
+  const message = document.getElementById('balloonMessage');
+
+  const messages = [
+    "Out of everyone in this world… somehow, I found you. ❤️",
+    "And somewhere along the way, you became my favorite part of every day. ✨",
+    "I don’t just want memories with you… I want a lifetime of them. 🥹❤️",
+    "Happy Birthday, Vaishnavi… my wife. ❤️💍<br>Today is your birthday, but having you is my everyday gift. ✨"
+  ];
+
+  message.innerHTML = messages[popped - 1];
+  message.classList.add('show');
+
+  if(popped === 4){
+    document.getElementById('balloonNext').classList.remove('hidden');
+  }
+
 function blowCandle(){
   const flame=document.getElementById('flame');
   if(flame.classList.contains('out')) return;
