@@ -80,8 +80,7 @@ function popBalloon(el){
   el.classList.add('pop');
   popped++;
 
-  document.getElementById('balloonCount').textContent =
-    popped + ' / 4 popped';
+  document.getElementById('balloonCount').textContent = popped;
 
   const message = document.getElementById('balloonMessage');
 
