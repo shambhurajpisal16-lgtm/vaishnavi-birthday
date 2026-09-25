@@ -208,3 +208,32 @@ font-weight:800;box-shadow:0 15px 35px rgba(91,37,60,.13);cursor:pointer;transit
   font-weight:800;
   z-index:1001;
 }
+.balloon-message{
+  margin:24px auto 0;
+  max-width:650px;
+  padding:18px 22px;
+  text-align:center;
+  font-family:"DM Serif Display",Georgia,serif;
+  font-size:22px;
+  line-height:1.5;
+  color:#7d3154;
+  background:rgba(255,255,255,.75);
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(125,49,84,.12);
+  opacity:0;
+  transform:translateY(12px);
+  transition:.4s ease;
+}
+
+.balloon-message.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(max-width:430px){
+  .balloon-message{
+    margin:20px 18px 0;
+    font-size:18px;
+    padding:16px 18px;
+  }
+}
